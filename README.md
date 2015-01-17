@@ -24,19 +24,25 @@ with '2010' or '2012' based on the version installed.
 
 Require it
 
-    var sh = require('execSync');
+```javascript
+  var sh = require('execSync');
+```
 
 `Run` does not capture output.
 
-    var code = sh.run('echo $USER; echo some_err 1>&2; exit 1');
-    console.log('return code ' + code);
+```javascript
+  var code = sh.run('echo $USER; echo some_err 1>&2; exit 1');
+  console.log('return code ' + code);
+```
 
 Use the less efficient `exec` if you need output. `exec` is just redirection
 trickery around `run`.
 
-    var result = sh.exec('echo $USER; echo some_err 1>&2; exit 1');
-    console.log('return code ' + result.code);
-    console.log('stdout + stderr ' + result.stdout);
+```javascript
+  var result = sh.exec('echo $USER; echo some_err 1>&2; exit 1');
+  console.log('return code ' + result.code);
+  console.log('stdout + stderr ' + result.stdout);
+```
 
 ## Notes
 
